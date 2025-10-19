@@ -1,0 +1,25 @@
+#include <iostream>     //Задача 3
+#include <cctype>
+#include <cstring>
+using namespace std;
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+    char strk[100];
+    cout << "Введите строку: ";
+    cin.getline(strk, 100);
+    char* k1 = strk;
+    char str2[100];
+    char* k2 = str2;
+
+    for (int i = 0; i < strlen(strk); i++) {
+        if (!isdigit(*k1)) {
+            *k2 = *k1;
+            ++k2;
+        }
+        ++k1;
+    }
+    *k2 = '\0';
+    cout << "Строка без цифр: " << str2;
+    return 0;
+}
